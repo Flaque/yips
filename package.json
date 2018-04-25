@@ -1,0 +1,69 @@
+{
+	"name": "yips",
+	"version": "0.0.0",
+	"description": "My brilliant module",
+	"license": "MIT",
+	"repository": "Flaque/yips",
+	"author": {
+		"name": "Flaque",
+		"email": "econrad@zagmail.gonzaga.edu",
+		"url": "flaque.net"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && nyc ava"
+	},
+	"files": [
+		"cli.js",
+		"ui.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {
+		"ink": "^0.2.1",
+		"meow": "^3.7.0",
+		"prop-types": "^15.5.10"
+	},
+	"devDependencies": {
+		"ava": "^0.20.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
+		"eslint-config-xo-react": "^0.13.0",
+		"eslint-plugin-react": "^7.1.0",
+		"import-jsx": "^1.2.0",
+		"nyc": "^11.0.0",
+		"xo": "^0.18.2"
+	},
+	"ava": {
+		"babel": {
+			"presets": [
+				"@ava/stage-4"
+			],
+			"plugins": [
+				[
+					"transform-react-jsx",
+					{
+						"pragma": "h",
+						"useBuiltIns": true
+					}
+				]
+			]
+		}
+	},
+	"xo": {
+		"extends": [
+			"xo-react"
+		],
+		"rules": {
+			"react/no-unused-prop-types": 1
+		},
+		"settings": {
+			"react": {
+				"pragma": "h"
+			}
+		}
+	}
+}

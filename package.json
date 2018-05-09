@@ -17,7 +17,7 @@
     "test": "ava",
     "lint": "xo",
     "fmt": "prettier --write src/*.js",
-    "build": "babel src --out-dir dist --ignore __tests__",
+    "build": "babel src --out-dir dist",
     "dev": "yarn build; ./dist/cli.js",
     "pretest": "npm run build",
     "prepublish": "npm run build"
@@ -25,18 +25,21 @@
   "files": ["dist"],
   "keywords": [""],
   "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.45",
+    "immutable": "^3.8.2",
     "ink": "^0.4.0",
+    "ink-redux": "^1.0.0",
     "meow": "^3.7.0",
     "prop-types": "^15.5.10",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.45"
+    "redux": "^4.0.0"
   },
   "devDependencies": {
-    "ava": "1.0.0-beta.4",
     "@babel/cli": "^7.0.0-beta.45",
     "@babel/core": "^7.0.0-beta.45",
     "@babel/preset-env": "^7.0.0-beta.45",
     "@babel/preset-react": "7.0.0-beta.45",
     "@babel/register": "^7.0.0-beta.45",
+    "ava": "1.0.0-beta.4",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-xo-react": "^0.13.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -58,6 +61,7 @@
       "react/no-unused-prop-types": 1,
       "react/jsx-tag-spacing": "off",
       "react/jsx-handler-names": "off",
+      "react/jsx-indent": "off",
       "import/no-unassigned-import": "off",
       "prefer-destructuring": "off"
     },

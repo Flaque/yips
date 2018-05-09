@@ -1,33 +1,27 @@
 # yips [![Build Status](https://travis-ci.org/Flaque/yips.svg?branch=master)](https://travis-ci.org/Flaque/yips)
 
-> My brilliant module
+> Yips is a postal service. Yip Yip.
 
+## Setup and Run
 
-## Install
+Clone the project and cd into it.
 
-```
-$ npm install --global yips
-```
-
-
-## Usage
-
-```js
-$ yips --help
-
-  Usage
-    yips [input]
-
-  Options
-    --name  Lorem ipsum [Default: false]
-
-  Examples
-    $ yips
-    I love Ink
-    $ yips --name=ponies
-    I love ponies
+```sh
+git clone git@github.com:Flaque/yips.git
+cd yips
 ```
 
+Install the dependencies with [yarn](https://yarnpkg.com/en/).
+
+```sh
+yarn
+```
+
+Then build and run.
+
+```sh
+yarn dev
+```
 
 ## License
 

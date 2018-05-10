@@ -22,14 +22,20 @@
     "pretest": "npm run build",
     "prepublish": "npm run build"
   },
-  "files": ["dist"],
-  "keywords": [""],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    ""
+  ],
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.45",
     "immutable": "^3.8.2",
     "ink": "^0.4.0",
     "ink-redux": "^1.0.0",
     "meow": "^3.7.0",
+    "nodemailer": "^4.6.4",
+    "nodemailer-smtp-transport": "^2.7.4",
     "prop-types": "^15.5.10",
     "redux": "^4.0.0"
   },
@@ -52,11 +58,18 @@
     "singleQuote": true
   },
   "ava": {
-    "require": ["@babel/register"]
+    "require": [
+      "@babel/register"
+    ]
   },
   "xo": {
-    "extends": ["xo-react", "prettier"],
-    "plugins": ["prettier"],
+    "extends": [
+      "xo-react",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "react/no-unused-prop-types": 1,
       "react/jsx-tag-spacing": "off",

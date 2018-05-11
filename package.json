@@ -22,12 +22,8 @@
     "pretest": "npm run build",
     "prepublish": "npm run build"
   },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    ""
-  ],
+  "files": ["dist"],
+  "keywords": [""],
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.45",
     "cheerio": "^1.0.0-rc.2",
@@ -37,6 +33,7 @@
     "immutable": "^3.8.2",
     "ink": "^0.4.0",
     "ink-redux": "^1.0.0",
+    "ink-text-input": "^1.1.1",
     "meow": "^3.7.0",
     "nodemailer-smtp-transport": "^2.7.4",
     "ow": "^0.3.0",
@@ -64,23 +61,18 @@
     "singleQuote": true
   },
   "ava": {
-    "require": [
-      "@babel/register"
-    ]
+    "require": ["@babel/register"]
   },
   "xo": {
-    "extends": [
-      "xo-react",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
+    "extends": ["xo-react", "prettier"],
+    "plugins": ["prettier"],
     "rules": {
       "react/no-unused-prop-types": 1,
       "react/jsx-tag-spacing": "off",
       "react/jsx-handler-names": "off",
       "react/jsx-indent": "off",
+      "react/jsx-indent-props": "off",
+      "react/require-default-props": "warn",
       "import/no-unassigned-import": "off",
       "prefer-destructuring": "off"
     },

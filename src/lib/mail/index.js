@@ -1,6 +1,6 @@
 import ow from 'ow';
 
-class Mail {
+export default class {
   constructor(client, user, pass) {
     ow(client, ow.function);
     this.client = client(user, pass);
@@ -36,5 +36,3 @@ class Mail {
     // TODO: do send
   }
 }
-
-module.exports = Mail;

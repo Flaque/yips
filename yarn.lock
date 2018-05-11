@@ -2081,7 +2081,17 @@ emailjs-imap-handler@^3.0.2:
   dependencies:
     ramda "^0.25.0"
 
-emailjs-mime-codec@^2.0.7:
+emailjs-mime-builder@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/emailjs-mime-builder/-/emailjs-mime-builder-2.0.5.tgz#fedd7c7fd273accdd7033dc649f335c3eb2188f6"
+  dependencies:
+    emailjs-addressparser "^2.0.2"
+    emailjs-mime-codec "^2.0.5"
+    emailjs-mime-types "^2.0.0"
+    punycode "1.4.1"
+    ramda "^0.25.0"
+
+emailjs-mime-codec@^2.0.5, emailjs-mime-codec@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/emailjs-mime-codec/-/emailjs-mime-codec-2.0.7.tgz#501341be3e322457ae10ed4cfe1c5c0ca1f1adf7"
   dependencies:
@@ -2096,6 +2106,10 @@ emailjs-mime-parser@^2.0.5:
     emailjs-addressparser "^2.0.1"
     emailjs-mime-codec "^2.0.7"
     ramda "^0.25.0"
+
+emailjs-mime-types@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/emailjs-mime-types/-/emailjs-mime-types-2.0.0.tgz#384fdd6a04634119ffce09f2a954508786ee42f4"
 
 emailjs-tcp-socket@^2.0.0:
   version "2.0.2"
@@ -4455,6 +4469,10 @@ proto-props@^1.1.0:
 pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
+
+punycode@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
 quick-lru@^1.0.0:
   version "1.1.0"

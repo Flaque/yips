@@ -1,4 +1,4 @@
-# 🐃 yips [![Build Status](https://travis-ci.org/Flaque/yips.svg?branch=master)](https://travis-ci.com/Flaque/yips)
+# 🐃 yips 
 
 > Yips is a postal service. Yip Yip.
 

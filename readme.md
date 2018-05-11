@@ -2,6 +2,10 @@
 
 > Yips is a postal service. Yip Yip.
 
+## Project Status
+
+This is an experimental project that I may abandon. It's fueled mostly out of boredom, an unreasonable dislike of most email clients and nostalgia for [a 2000s-era nickelodeon toon.](https://i.imgur.com/Pfc3Y5j.mp4) Feel free to contribute. 
+ 
 ## Setup and Run
 
 Clone the project and cd into it.

@@ -18,6 +18,43 @@ This first working version will probably not be great for real human use.
 4.  If they pick view, then show them a single email. Only option for them to leave is ctrl-c at this point.
 5.  If they pick send, then prompt them for subject, to, and then message body. Press send at the end.
 
+## Screens
+
+Prompt
+
+```
+Welcome to Yip, please enter your Outlook email and password.
+Username: <User enters here>
+Password: <Then they get prompted here>
+```
+
+Select one email or another
+
+```
+Read
+-------
+Compose
+```
+
+Read an email
+
+```
+~ We should get Coffee!
+fuzzjazz@example.com
+
+body goes here text yes
+okay cool
+dope yay
+```
+
+Compose
+
+```
+to: <prompt email>
+subject: <prompt subject>
+body: <prompt long email (press ctrl-s or something to send)>
+```
+
 ## Modules
 
 ### mail

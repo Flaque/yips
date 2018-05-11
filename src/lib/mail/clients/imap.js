@@ -20,7 +20,6 @@ const icloud = (user, pass) => imap('imap.mail.me.com', 993, user, pass);
 const zoho = (user, pass) => imap('imap.zoho.com', 993, user, pass);
 
 module.exports = {
-  imap,
   outlook,
   gmail,
   icloud,

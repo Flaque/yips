@@ -1,29 +1,40 @@
-const parse = require('emailjs-mime-parser').default;
-const { TextDecoder } = require('text-encoding');
-const fromHtml = require('./from-html');
-const { outlook } = require('./clients/imap');
+import ow from 'ow';
 
-function body(message) {
-  const b = message['body[]'];
+class Mail {
+  constructor(client, user, pass) {
+    ow(client, ow.function);
+    this.client = client(user, pass);
+    this._isConnectedOrConnecting = false;
 
-  const nodes = parse(b).childNodes;
+    this.get = this.get.bind(this);
+    this.send = this.send.bind(this);
+    this._maybeConnect = this._maybeConnect.bind(this);
+  }
 
-  const html = new TextDecoder('utf-8').decode(nodes[1].content);
+  /**
+   * Attempts to connect if we're not already attempting to
+   * connect or are already connected.
+   */
+  async _maybeConnect() {
+    if (this._isConnectedOrConnecting) {
+      return null;
+    }
 
-  return fromHtml(html);
+    this._isConnectedOrConnecting = true;
+    await this.client.connect();
+  }
+
+  async get() {
+    await this._maybeConnect();
+
+    // TODO: do get
+  }
+
+  async send() {
+    await this._maybeConnect();
+
+    // TODO: do send
+  }
 }
 
-async function start() {
-  const client = outlook('dogs@something.com', 'puppies');
-
-  await client.connect();
-  const messages = await client.listMessages('INBOX', '1:10', ['body[]']);
-
-  messages.forEach(m => {
-    body(m);
-  });
-
-  await client.logout();
-}
-
-start().catch(console.error);
+module.exports = Mail;

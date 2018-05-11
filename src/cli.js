@@ -19,18 +19,4 @@ const cli = meow(`
 	  I love ponies
 `);
 
-const mail = require('./lib/mail');
-
-const content = {
-  from: 'blah@zagmail.gonzaga.edu',
-  to: 'blah@zagmail.gonzaga.edu',
-  subject: 'Hello secondtime',
-  html: '<p>Hello there!</p>'
-};
-
-const user = 'foo@example.com';
-const pass = 'passworrrdd';
-
-mail.send(mail.outlook(user, pass), content);
-
 render(h(Ui, cli.flags));

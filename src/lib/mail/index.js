@@ -1,24 +1,29 @@
-const mailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
+const parse = require('emailjs-mime-parser').default;
+const { TextDecoder } = require('text-encoding');
+const fromHtml = require('./from-html');
+const { outlook } = require('./clients/imap');
 
-const outlook = (user, pass) => {
-  return mailer.createTransport(
-    smtpTransport({
-      service: 'hotmail',
-      auth: {
-        user,
-        pass
-      }
-    })
-  );
-};
+function body(message) {
+  const b = message['body[]'];
 
-const send = (transport, email) => {
-  transport.sendMail(email, (err, info) => {
-    if (err) throw err;
+  const nodes = parse(b).childNodes;
 
-    console.log(info);
+  const html = new TextDecoder('utf-8').decode(nodes[1].content);
+
+  return fromHtml(html);
+}
+
+async function start() {
+  const client = outlook('dogs@something.com', 'puppies');
+
+  await client.connect();
+  const messages = await client.listMessages('INBOX', '1:10', ['body[]']);
+
+  messages.forEach(m => {
+    body(m);
   });
-};
 
-module.exports = { send, outlook };
+  await client.logout();
+}
+
+start().catch(console.error);

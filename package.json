@@ -30,14 +30,18 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.45",
+    "cheerio": "^1.0.0-rc.2",
+    "emailjs-imap-client": "^3.0.7",
+    "emailjs-mime-builder": "^2.0.5",
+    "emailjs-mime-parser": "^2.0.5",
     "immutable": "^3.8.2",
     "ink": "^0.4.0",
     "ink-redux": "^1.0.0",
     "meow": "^3.7.0",
-    "nodemailer": "^4.6.4",
     "nodemailer-smtp-transport": "^2.7.4",
     "prop-types": "^15.5.10",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "text-encoding": "^0.6.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.45",

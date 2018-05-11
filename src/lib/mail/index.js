@@ -1,6 +1,6 @@
 const parse = require('emailjs-mime-parser').default;
 const { TextDecoder } = require('text-encoding');
-const fromHtml = require('../from-html');
+const fromHtml = require('./from-html');
 const { outlook } = require('./clients/imap');
 
 function body(message) {

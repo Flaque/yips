@@ -1,5 +1,5 @@
-const toTree = require('emailjs-mime-parser').default;
-const { TextDecoder } = require('text-encoding');
+import toTree from 'emailjs-mime-parser';
+import { TextDecoder } from 'text-encoding';
 
 function isHtmlNode(node) {
   return node.contentType.value === 'text/html';
@@ -32,4 +32,4 @@ function parse(email) {
   };
 }
 
-module.exports = parse;
+export default parse;

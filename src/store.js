@@ -1,4 +1,4 @@
-const { createStore } = require('redux');
+import { createStore } from 'redux';
 
 // Main Reducer
 const reducer = (state = { user: '', pass: '' }, action) => {
@@ -27,4 +27,4 @@ const reducer = (state = { user: '', pass: '' }, action) => {
  */
 const getStore = () => createStore(reducer);
 
-module.exports = getStore;
+export default getStore;

@@ -1,4 +1,4 @@
-const mailer = require('emailjs-imap-client');
+import mailer from 'emailjs-imap-client';
 
 const ImapClient = mailer.default;
 
@@ -19,7 +19,7 @@ const icloud = (user, pass) => imap('imap.mail.me.com', 993, user, pass);
 
 const zoho = (user, pass) => imap('imap.zoho.com', 993, user, pass);
 
-module.exports = {
+export default {
   outlook,
   gmail,
   icloud,

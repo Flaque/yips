@@ -1,4 +1,4 @@
-const cheerio = require('cheerio');
+import cheerio from 'cheerio';
 
 /**
  * Converts HTML to readable command line content
@@ -22,4 +22,4 @@ function fromHtml(html) {
     .join('\n');
 }
 
-module.exports = fromHtml;
+export default fromHtml;

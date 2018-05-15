@@ -1,6 +1,6 @@
-const test = require('ava');
-const { h, renderToString } = require('ink');
-const UI = require('./ui');
+import test from 'ava';
+import { h, renderToString } from 'ink';
+import UI from './ui';
 
 test('Check it at least renders... something', t => {
   const actual = renderToString(h(UI));

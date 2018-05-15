@@ -1,6 +1,6 @@
-const test = require('ava');
-const MimeBuilder = require('emailjs-mime-builder').default;
-const parse = require('..');
+import test from 'ava';
+import MimeBuilder from 'emailjs-mime-builder';
+import parse from '..';
 
 const html = '<h1>Hello world</h1>';
 const to = 'to@gmail.com';

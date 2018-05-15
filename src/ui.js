@@ -1,8 +1,8 @@
 'use strict';
 
-const { h, Component, Text } = require('ink');
-const { Provider } = require('ink-redux');
-const getStore = require('./store');
+import { h, Component, Text } from 'ink';
+import { Provider } from 'ink-redux';
+import getStore from './store';
 
 const store = getStore();
 
@@ -16,4 +16,4 @@ class UI extends Component {
   }
 }
 
-module.exports = UI;
+export default UI;

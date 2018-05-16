@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
-import { h, render } from 'ink';
 import meow from 'meow';
-import Ui from './ui';
 import Mail, { clients } from './lib/mail';
 
-const cli = meow(`
+meow(`
 	Usage
 	  $ yips [input]
 
@@ -27,5 +25,3 @@ mail
   .get()
   .then(console.log)
   .catch(console.error);
-
-// render(h(Ui, cli.flags));

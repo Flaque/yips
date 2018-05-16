@@ -18,7 +18,7 @@
     "lint": "xo",
     "fmt": "prettier --write src/*.js",
     "build": "babel src --out-dir dist",
-    "dev": "yarn build; ./dist/cli.js",
+    "dev": "yarn build --quiet; ./dist/cli.js",
     "pretest": "npm run build",
     "prepublish": "npm run build"
   },

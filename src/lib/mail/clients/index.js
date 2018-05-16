@@ -1,6 +1,4 @@
-import mailer from 'emailjs-imap-client';
-
-const ImapClient = mailer.default;
+import ImapClient, { LOG_LEVEL_NONE } from 'emailjs-imap-client';
 
 const imap = (server, port, user, pass) =>
   new ImapClient(server, port, {
@@ -8,7 +6,7 @@ const imap = (server, port, user, pass) =>
       user,
       pass
     },
-    logLevel: mailer.LOG_LEVEL_NONE
+    logLevel: LOG_LEVEL_NONE
   });
 
 const outlook = (user, pass) => imap('outlook.office365.com', 993, user, pass);
@@ -19,9 +17,4 @@ const icloud = (user, pass) => imap('imap.mail.me.com', 993, user, pass);
 
 const zoho = (user, pass) => imap('imap.zoho.com', 993, user, pass);
 
-export default {
-  outlook,
-  gmail,
-  icloud,
-  zoho
-};
+export { outlook, gmail, icloud, zoho };

@@ -4,6 +4,7 @@
 import { h, render } from 'ink';
 import meow from 'meow';
 import Ui from './ui';
+import Mail, { clients } from './lib/mail';
 
 const cli = meow(`
 	Usage
@@ -19,4 +20,12 @@ const cli = meow(`
 	  I love ponies
 `);
 
-render(h(Ui, cli.flags));
+const mail = new Mail(clients.outlook, 'replace@me.com', 'passsword');
+
+console.log('...Connecting to email client');
+mail
+  .get()
+  .then(console.log)
+  .catch(console.error);
+
+// render(h(Ui, cli.flags));

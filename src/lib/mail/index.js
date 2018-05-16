@@ -1,4 +1,18 @@
 import ow from 'ow';
+import * as clients from './clients';
+import fromMime from './from-mime';
+
+const parseEmailJSFormat = emailjs => {
+  const [body, uid, flags] = [emailjs['body[]'], emailjs.uid, emailjs.flags];
+  const mail = fromMime(body);
+
+  return {
+    ...mail,
+    ...{ flags, uid }
+  };
+};
+
+export { clients };
 
 export default class {
   constructor(client, user, pass) {
@@ -27,7 +41,13 @@ export default class {
   async get() {
     await this._maybeConnect();
 
-    // TODO: do get
+    const messages = await this.client.listMessages('INBOX', '1:2', [
+      'uid',
+      'flags',
+      'body[]'
+    ]);
+
+    return messages ? messages.map(parseEmailJSFormat) : [];
   }
 
   async send() {

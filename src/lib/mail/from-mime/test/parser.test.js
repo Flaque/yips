@@ -1,6 +1,7 @@
 import test from 'ava';
 import MimeBuilder from 'emailjs-mime-builder';
 import parse from '..';
+import fromHtml from '../../from-html';
 
 const html = '<h1>Hello world</h1>';
 const to = 'to@gmail.com';
@@ -21,7 +22,7 @@ function stdEmail() {
 }
 
 test('parse can get the html content', t => {
-  t.deepEqual(parse(stdEmail()).html, html);
+  t.deepEqual(parse(stdEmail()).txt, fromHtml(html));
 });
 
 test('parse can get the "to" header', t => {

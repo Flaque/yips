@@ -19,7 +19,7 @@ test('Mail creates a new instance without issue', t => {
   t.truthy(mail);
 });
 
-test.skip('mail.get will list messages', t => {
+test('mail.get will list messages', async t => {
   const fakeListMessages = sinon.fake();
 
   const mail = new Mail(
@@ -28,7 +28,7 @@ test.skip('mail.get will list messages', t => {
     'blue'
   );
 
-  mail.get();
+  await mail.get();
 
   t.true(fakeListMessages.called);
 });

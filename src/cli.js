@@ -4,9 +4,9 @@
 import meow from 'meow';
 import Mail, { clients } from './lib/mail';
 
-meow(`
+const cli = meow(`
 	Usage
-	  $ yips [input]
+	  $ yips email password
 
 	Options
 	  --name  Lorem ipsum [Default: false]
@@ -18,10 +18,17 @@ meow(`
 	  I love ponies
 `);
 
-const mail = new Mail(clients.outlook, 'replace@me.com', 'passsword');
+if (cli.input.length !== 2) {
+  console.log('Current usage is: yarn dev [email] [password]');
+  process.exit(1);
+}
+
+const mail = new Mail(clients.outlook, cli.input[0], cli.input[1]);
 
 console.log('...Connecting to email client');
+console.log('-----------------------------\n');
 mail
   .get()
+  .then(m => m[0].txt)
   .then(console.log)
   .catch(console.error);

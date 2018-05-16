@@ -19,7 +19,7 @@ test('Mail creates a new instance without issue', t => {
   t.truthy(mail);
 });
 
-test('mail.get will list messages', t => {
+test.skip('mail.get will list messages', t => {
   const fakeListMessages = sinon.fake();
 
   const mail = new Mail(
